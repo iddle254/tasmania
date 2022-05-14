@@ -21,7 +21,7 @@ export class EditTaskPage extends React.Component {
           </div>
         </div>
         <div className='content-container'>
-          <TaskForm expense={this.props.task} onSubmit={this.onSubmit} />
+          <TaskForm task={this.props.task} onSubmit={this.onSubmit} />
           <button className='button button--secondary' onClick={this.onRemove}>
             Remove Task
           </button>
@@ -32,7 +32,7 @@ export class EditTaskPage extends React.Component {
 }
 
 const mapStateToProps = (state, props) => ({
-  expense: state.tasks.find((task) => task.id === props.match.params.id),
+  task: state.tasks.find((task) => task.id === props.match.params.id),
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
